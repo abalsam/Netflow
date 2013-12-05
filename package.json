@@ -2,16 +2,11 @@
   "name": "Netflow",
   "version": "0.0.3",
   "description": "Netflow parser for Node.js",
-<<<<<<< HEAD
   "author": {
     "name": "Chris Jones",
     "email": "chris@modse.net"
   },
   "licenses": [
-=======
-  "author": "Chris Jones <chris@modse.net>",
-  "licenses":[
->>>>>>> 94b9af52d0c61024e33e49763f3da32cb26479fe
     {
       "type": "MIT"
     }
@@ -26,7 +21,6 @@
   "engines": {
     "node": ">= 0.4.0"
   },
-<<<<<<< HEAD
   "main": "./lib/netflow.js",
   "readme": "Netflow\n=============\n\nIs a netflow parser for node.js\n\nInstallation\n============\n\nnpm install https://github.com/shaofis/Netflow/tarball/master\n\nBasic Example\n=============\n\n    var NetFlowPacket = require('netflow')\n    var dgram = require('dgram')\n\n    var server = dgram.createSocket('udp4');\n    server.on('message', function(msg, rinfo){\n      var Packet = new NetFlowPacket(msg, rinfo.address);\n      console.log(Packet)\n    });\n    server.bind(2055);\n\nStatus\n======\n\nV9 Appears to be working; needs more testing.\nI'm close on V10 but it isn't complete yet; I have been working with rfc5101 but I believe there is a newer version. \nFor now V10 is handled with a few exceptions based on changes from a newer rfc.\n      \nI've changed NetFlowPacket to return an object including the header and 3 key arrays\n\n        Flows[]            mapped flows\n        Templates[]        received templates\n        noTemplates[]      flow information where we don't yet have a template for\n    \nTemplates are sent so that you can store it semi permanantly so that on reload you can immediatly decode these flows.\nSince we can't decode a V9 or V10 packet until we have a template I've sent those packets back to the main app where you can decide if you want to queue it and decode it later or discard it.\n    \nOrigin\n======\n\nThis is a fork of Node-Netflowd by Sharif Ghazzawi\nhttps://github.com/Sghazzawi/Node-Netflowd/\n",
   "_id": "Netflow@0.0.3",
@@ -34,7 +28,4 @@
     "shasum": "2f9949270f2201b14bc34e3764fda772653ca927"
   },
   "_from": "https://github.com/shaofis/Netflow/tarball/master"
-=======
-  "main": "./lib/netflow.js"
->>>>>>> 94b9af52d0c61024e33e49763f3da32cb26479fe
 }
