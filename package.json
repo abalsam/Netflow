@@ -11,12 +11,11 @@
       "type": "MIT"
     }
   ],
-  "repositories": [
+  "repository":
     {
       "type": "git",
       "url": "git://github.com/shaofis/Netflow.git"
-    }
-  ],
+    },
   "devDependencies": {},
   "engines": {
     "node": ">= 0.4.0"
